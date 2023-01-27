@@ -13,33 +13,32 @@ public class Main {
         l.info("Enter the credit card name:");
         String name = sc.next();
         l.info("Enter the credit card number:");
-        int number = sc.nextInt();
+        String number = sc.next();
         l.info("enter the expiration date");
         String date=sc.next();
-        l.info("Enter the credit card number to check:");
-        int number1 = sc.nextInt();
 
         Card c=new Card(name,number,date);
         Card c1=(Card)c.clone();
 
-        String e=equals(number,number1);
+        l.info("Enter the credit card name:");
+        String name1 = sc.next();
+        l.info("Enter the credit card number:");
+        String number1 = sc.next();
+        l.info("enter the expiration date");
+        String date1=sc.next();
+
+        Card c2=new Card(name1,number1,date1);
+
+        String e=""+c1.compare(c2);
         l.info(e);
-    }
-    public static String equals(int number, int number1){
-        if(number == number1){
-            return "true";
-        }
-        else{
-            return "false";
-        }
     }
 }
 class Card extends Main implements Cloneable{
     private String name;
-    private int number;
+    private String number;
     private String date;
 
-    Card(String name,int number,String date){
+    Card(String name,String number,String date){
         this.name=name;
         this.number=number;
         this.date=date;
@@ -47,5 +46,12 @@ class Card extends Main implements Cloneable{
     public Object clone() throws CloneNotSupportedException
     {
         return super.clone();
+    }
+    public boolean compare(Card verify){
+
+        if(this.number.equals(verify.number) ) {
+            return true;
+        }
+            return false;
     }
 }
