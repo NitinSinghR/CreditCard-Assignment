@@ -21,7 +21,8 @@ public class Main {
 
         Card c1=new Card(name,number,date);
         Card c2=(Card)c1.clone();
-        l.info(equals(number,number1));
+        String e=equals(number,number1);
+        l.info(e);
     }
     public static String equals(int number, int number1){
         if(number == number1){
