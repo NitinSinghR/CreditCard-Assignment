@@ -48,10 +48,6 @@ class Card extends Main implements Cloneable{
         return super.clone();
     }
     public boolean compare(Card verify){
-
-        if(this.number.equals(verify.number) ) {
-            return true;
-        }
-            return false;
+            return this.number.equals(verify.number);
     }
 }
