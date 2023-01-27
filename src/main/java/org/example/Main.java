@@ -19,9 +19,10 @@ public class Main {
         l.info("Enter the credit card number to check:");
         int number1 = sc.nextInt();
 
-        Card c1=new Card(name,number,date);
-        Card c2=(Card)c1.clone();
-        String e=equals(number,number1);
+        Card c=new Card(name,number,date);
+        Card c1=(Card)c.clone();
+
+        String e=c1.equals(number,number1);
         l.info(e);
     }
     public static String equals(int number, int number1){
