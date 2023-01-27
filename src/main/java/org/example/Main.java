@@ -34,7 +34,7 @@ public class Main {
 }
 class Card extends Main implements Cloneable{
     private String name;
-    public int number;
+    private int number;
     private String date;
 
     Card(String name,int number,String date){
