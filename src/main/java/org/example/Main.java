@@ -22,10 +22,10 @@ public class Main {
         Card c=new Card(name,number,date);
         Card c1=(Card)c.clone();
 
-        String e=c1.equal(number,number1);
+        String e=equals(number,number1);
         l.info(e);
     }
-    public static String equal(int number, int number1){
+    public static String equals(int number, int number1){
         if(number == number1){
             return "true";
         }
