@@ -25,11 +25,7 @@ public class Main {
         l.info("Enter the credit card name:");
         String name1 = sc.next();
         l.info("Enter the credit card number:");
-        try{
-            number1 = Integer.parseInt(sc.next());
-        }catch(NumberFormatException e){
-            e.printStackTrace();
-        }
+        number1 = Integer.parseInt(sc.next());
         l.info("enter the expiration date");
         String date1=sc.next();
 
