@@ -10,15 +10,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Logger l= Logger.getLogger("com.api.jar");
 
-        int number=0;
+        int number;
         l.info("Enter the credit card name:");
         String name = sc.next();
         l.info("Enter the credit card number:");
-        try{
-            number = Integer.parseInt(sc.next());
-        }catch(NumberFormatException e){
-            e.printStackTrace();
-        }
+        number = Integer.parseInt(sc.next());
         l.info("enter the expiration date");
         String date=sc.next();
 
