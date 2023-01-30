@@ -51,9 +51,6 @@ class Card extends Main implements Cloneable {
     }
 
     public boolean compare(Card verify) {
-        if (this.number == verify.number) {
-            return true;
-        }
-        return false;
+        return this.number == verify.number;
     }
 }
