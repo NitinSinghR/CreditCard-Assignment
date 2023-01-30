@@ -10,20 +10,30 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Logger l= Logger.getLogger("com.api.jar");
 
+        int number=0;
         l.info("Enter the credit card name:");
         String name = sc.next();
         l.info("Enter the credit card number:");
-        String number = sc.next();
+        try{
+            number = Integer.parseInt(sc.next());
+        }catch(NumberFormatException e){
+            e.printStackTrace();
+        }
         l.info("enter the expiration date");
         String date=sc.next();
 
         Card c=new Card(name,number,date);
         Card c1=(Card)c.clone();
 
+        int number1=0;
         l.info("Enter the credit card name:");
         String name1 = sc.next();
         l.info("Enter the credit card number:");
-        String number1 = sc.next();
+        try{
+            number1 = Integer.parseInt(sc.next());
+        }catch(NumberFormatException e){
+            e.printStackTrace();
+        }
         l.info("enter the expiration date");
         String date1=sc.next();
 
@@ -33,21 +43,25 @@ public class Main {
         l.info(e);
     }
 }
-class Card extends Main implements Cloneable{
+class Card extends Main implements Cloneable {
     private String name;
-    private String number;
+    private int number;
     private String date;
 
-    Card(String name,String number,String date){
-        this.name=name;
-        this.number=number;
-        this.date=date;
+    Card(String name, int number, String date) {
+        this.name = name;
+        this.number = number;
+        this.date = date;
     }
-    public Object clone() throws CloneNotSupportedException
-    {
+
+    public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-    public boolean compare(Card verify){
-            return this.number.equals(verify.number);
+
+    public boolean compare(Card verify) {
+        if (this.number == verify.number) {
+            return true;
+        }
+        return false;
     }
 }
