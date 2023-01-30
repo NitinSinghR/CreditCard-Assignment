@@ -10,22 +10,20 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Logger l= Logger.getLogger("com.api.jar");
 
-        int number;
         l.info("Enter the credit card name:");
         String name = sc.next();
         l.info("Enter the credit card number:");
-        number = Integer.parseInt(sc.next());
+        int number = sc.nextInt();
         l.info("enter the expiration date");
         String date=sc.next();
 
         Card c=new Card(name,number,date);
         Card c1=(Card)c.clone();
 
-        int number1=0;
         l.info("Enter the credit card name:");
         String name1 = sc.next();
         l.info("Enter the credit card number:");
-        number1 = Integer.parseInt(sc.next());
+        int number1 = sc.nextInt();
         l.info("enter the expiration date");
         String date1=sc.next();
 
