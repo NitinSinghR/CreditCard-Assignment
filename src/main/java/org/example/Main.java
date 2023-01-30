@@ -13,7 +13,7 @@ public class Main {
         l.info("Enter the credit card name:");
         String name = sc.next();
         l.info("Enter the credit card number:");
-        int number = sc.nextInt();
+        String number = sc.next();
         l.info("enter the expiration date");
         String date=sc.next();
 
@@ -23,7 +23,7 @@ public class Main {
         l.info("Enter the credit card name:");
         String name1 = sc.next();
         l.info("Enter the credit card number:");
-        int number1 = sc.nextInt();
+        String number1 = sc.next();
         l.info("enter the expiration date");
         String date1=sc.next();
 
@@ -33,22 +33,21 @@ public class Main {
         l.info(e);
     }
 }
-class Card extends Main implements Cloneable {
+class Card extends Main implements Cloneable{
     private String name;
-    private int number;
+    private String number;
     private String date;
 
-    Card(String name, int number, String date) {
-        this.name = name;
-        this.number = number;
-        this.date = date;
+    Card(String name,String number,String date){
+        this.name=name;
+        this.number=number;
+        this.date=date;
     }
-
-    public Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException
+    {
         return super.clone();
     }
-
-    public boolean compare(Card verify) {
-        return this.number == verify.number;
+    public boolean compare(Card verify){
+            return this.number.equals(verify.number);
     }
 }
