@@ -1,9 +1,9 @@
 package org.example;
 
-import java.util.Scanner;
-import java.util.logging.Logger;
+import java.util.*;
+import java.util.logging.*;
 
-public class Main {
+public class CreditCard {
 
     public static void main(String[] args) throws CloneNotSupportedException {
 
@@ -31,23 +31,5 @@ public class Main {
 
         String e=""+c1.compare(c2);
         l.info(e);
-    }
-}
-class Card extends Main implements Cloneable{
-    private String name;
-    private String number;
-    private String date;
-
-    Card(String name,String number,String date){
-        this.name=name;
-        this.number=number;
-        this.date=date;
-    }
-    public Object clone() throws CloneNotSupportedException
-    {
-        return super.clone();
-    }
-    public boolean compare(Card verify){
-            return this.number.equals(verify.number);
     }
 }
